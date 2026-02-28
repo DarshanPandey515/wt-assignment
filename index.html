@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Plan And Track - Darshan Pandey</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        }
+
+        .tab-btn,
+        .card-hover {
+            transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .card-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 20px 30px -10px rgba(79, 70, 229, 0.2);
+        }
+
+        .glass-panel {
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            background-color: rgba(22, 22, 30, 0.7);
+        }
+    </style>
+</head>
+
+<body class="bg-[#0c0c10] text-[#e1e1e6] antialiased flex flex-col items-center selection:bg-indigo-500/30">
+
+    <div class="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col min-h-screen">
+
+        <header
+            class="flex flex-wrap items-center justify-between py-4 mb-6 border-b border-[#1f1f2b] bg-[#0c0c10]/80 sticky top-0 z-10 backdrop-blur-md rounded-2xl px-5 -mx-2 shadow-sm">
+            <div class="flex items-center gap-2.5">
+                <span class="text-3xl">🗂️</span>
+                <h1
+                    class="text-2xl font-semibold tracking-tight bg-gradient-to-r from-indigo-200 to-indigo-100 bg-clip-text text-transparent">
+                    Track<span class="text-indigo-300/70"> and </span>focus</h1>
+            </div>
+
+            <nav
+                class="flex gap-1 text-sm font-medium p-1 bg-[#16161f] border border-[#252533] rounded-full shadow-inner">
+                <button onclick="switchTab('home')" id="tab-home"
+                    class="tab-btn px-4 py-1.5 rounded-full text-zinc-400 hover:text-white transition-all duration-150">
+                    Home
+                </button>
+                <button onclick="switchTab('planner')" id="tab-planner"
+                    class="tab-btn px-4 py-1.5 rounded-full text-white bg-indigo-600 font-medium shadow-md">
+                    Planner
+                </button>
+                <button onclick="switchTab('about')" id="tab-about"
+                    class="tab-btn px-4 py-1.5 rounded-full text-zinc-400 hover:text-white">
+                    About
+                </button>
+            </nav>
+        </header>
+
+        <div class="flex-1 mb-10 space-y-8">
+
+            <div id="home-section" class="hidden space-y-6">
+
+                <div class="glass-panel rounded-2xl p-6 border border-indigo-500/20 shadow-xl bg-[#13131b]/60">
+                    <div class="flex items-start justify-between gap-4">
+                        <div>
+                            <span class="text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-indigo-300/80">core
+                                objective</span>
+                            <h2 class="text-3xl sm:text-4xl font-bold mt-1.5 text-white">master your day,<br>own your
+                                focus.</h2>
+                            <p class="text-[#a1a1b0] max-w-xl mt-3 text-base leading-relaxed">
+                                Your clarity engine — plan, execute, reflect. <span
+                                    class="text-indigo-300 font-medium">No fluff.</span>
+                            </p>
+                        </div>
+                        <div class="text-7xl opacity-30 hidden md:block">🎯</div>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-5">
+                    <div
+                        class="card-hover bg-[#15151f] p-5 rounded-xl border border-[#262633] hover:border-indigo-500/50 transition-all">
+                        <div
+                            class="w-10 h-10 rounded-lg bg-indigo-500/10 flex items-center justify-center text-xl mb-3">
+                            ⏳</div>
+                        <h3 class="text-base font-semibold text-white">beat procrastination</h3>
+                        <p class="text-xs text-[#8f8fa3] mt-1.5 leading-relaxed">Break tasks into daily actions.
+                            Transform vague duties into manageable steps.</p>
+                    </div>
+                    <div
+                        class="card-hover bg-[#15151f] p-5 rounded-xl border border-[#262633] hover:border-teal-500/50">
+                        <div class="w-10 h-10 rounded-lg bg-teal-500/10 flex items-center justify-center text-xl mb-3">
+                            🧠</div>
+                        <h3 class="text-base font-semibold text-white">priority‑first mindset</h3>
+                        <p class="text-xs text-[#8f8fa3] mt-1.5 leading-relaxed">High/medium/low tags — invest energy
+                            where it matters most.</p>
+                    </div>
+                    <div
+                        class="card-hover bg-[#15151f] p-5 rounded-xl border border-[#262633] hover:border-amber-500/50">
+                        <div class="w-10 h-10 rounded-lg bg-amber-500/10 flex items-center justify-center text-xl mb-3">
+                            📆</div>
+                        <h3 class="text-base font-semibold text-white">due‑date awareness</h3>
+                        <p class="text-xs text-[#8f8fa3] mt-1.5 leading-relaxed">Never lose track. Every task includes a
+                            due date — always ahead.</p>
+                    </div>
+                </div>
+
+                <div
+                    class="glass-panel rounded-xl p-5 border border-indigo-800/20 flex flex-wrap items-center justify-between gap-4 bg-[#13131b]/40">
+                    <div class="flex items-center gap-3">
+                        <span class="text-4xl">🎓</span>
+                        <div>
+                            <p class="text-xs font-medium text-indigo-300/70 tracking-wide">built for students · by a
+                                student</p>
+                            <p class="text-sm text-white/90">“Clarity on what to study & when — that's the real
+                                objective.”</p>
+                        </div>
+                    </div>
+                    <div class="text-xs text-zinc-500 bg-[#1f1f2b] px-3 py-1.5 rounded-full border border-[#2c2c3a]">
+                        23BCAR0645 – Darshan Pandey</div>
+                </div>
+            </div>
+
+            <div id="planner-section" class="space-y-6">
+
+                <div class="glass-panel rounded-xl p-5 border border-[#262633] shadow-md bg-[#13131b]/70">
+                    <div class="flex items-center gap-2 mb-4">
+                        <span class="w-1 h-5 bg-indigo-400 rounded-full"></span>
+                        <h4 class="text-sm font-semibold text-indigo-200 uppercase tracking-wide">➕ add new to‑do</h4>
+                        <span class="text-xs text-zinc-500 ml-auto">stay objective</span>
+                    </div>
+
+                    <form onsubmit="handleSubmit(event)">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs text-zinc-400 mb-1.5 font-medium">📖 Subject</label>
+                                <input id="subject" type="text" placeholder="e.g. Mathematics"
+                                    class="w-full bg-[#1e1e28] border border-[#2e2e3a] rounded-lg px-3.5 py-2.5 text-sm focus:ring-1 focus:ring-indigo-500/50 outline-none transition">
+                            </div>
+                            <div>
+                                <label class="block text-xs text-zinc-400 mb-1.5 font-medium">✅ To-do</label>
+                                <input id="todo" type="text" placeholder="read chapter 4"
+                                    class="w-full bg-[#1e1e28] border border-[#2e2e3a] rounded-lg px-3.5 py-2.5 text-sm focus:ring-1 focus:ring-indigo-500/50">
+                            </div>
+                            <div>
+                                <label class="block text-xs text-zinc-400 mb-1.5 font-medium">⚡ Priority</label>
+                                <select name="priority"
+                                    class="w-full bg-[#1e1e28] border border-[#2e2e3a] rounded-lg px-3.5 py-2.5 text-sm focus:ring-1 focus:ring-indigo-500/50">
+                                    <option value="high" class="bg-[#1e1e28]">🔴 High</option>
+                                    <option value="medium" class="bg-[#1e1e28]">🟡 Medium</option>
+                                    <option value="low" class="bg-[#1e1e28]">🟢 Low</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs text-zinc-400 mb-1.5 font-medium">📅 Due date</label>
+                                <input id="due" type="date"
+                                    class="w-full bg-[#1e1e28] border border-[#2e2e3a] rounded-lg px-3.5 py-2.5 text-sm focus:ring-1 focus:ring-indigo-500/50">
+                            </div>
+                        </div>
+
+                        <div class="flex justify-end mt-5">
+                            <button type="submit"
+                                class="bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-medium py-2.5 px-6 rounded-lg transition shadow-md shadow-indigo-900/30 flex items-center gap-2">
+                                <span>➕</span> Add to list
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="glass-panel rounded-xl p-5 border border-[#262633] bg-[#13131b]/70">
+                    <div class="flex items-center justify-between mb-3">
+                        <div class="flex items-center gap-2">
+                            <span class="w-1 h-5 bg-teal-400 rounded-full"></span>
+                            <h4 class="text-sm font-semibold text-teal-200 uppercase tracking-wide">📋 today's
+                                objectives</h4>
+                        </div>
+                        <span class="text-xs bg-[#1f1f2b] px-3 py-1 rounded-full text-zinc-300 border border-[#2a2a36]"
+                            id="todo-counter">0 tasks</span>
+                    </div>
+
+                    <div id="todo-list-container"
+                        class="space-y-2.5 max-h-[360px] overflow-y-auto pr-1 scrollbar-thin scrollbar-thumb-zinc-700">
+                    </div>
+                </div>
+            </div>
+
+            <div id="about-section" class="hidden">
+                <div class="glass-panel rounded-xl border border-indigo-800/30 overflow-hidden bg-[#13131b]/80">
+
+                    <div
+                        class="bg-gradient-to-r from-indigo-900/40 to-indigo-800/20 px-6 py-8 border-b border-indigo-800/30">
+                        <h2 class="text-3xl font-bold text-white">why this exists</h2>
+                        <p class="text-indigo-200/80 text-base mt-1 max-w-xl">one objective: structured, achievable
+                            study sessions.</p>
+                    </div>
+
+                    <div class="p-6 grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h3
+                                class="text-sm font-semibold text-white flex items-center gap-2 uppercase tracking-wider text-indigo-300">
+                                <span class="w-2 h-2 bg-indigo-400 rounded-full"></span> mission</h3>
+                            <p class="text-sm text-[#b1b1c0] mt-2 leading-relaxed">
+                                Every feature serves one purpose: <span class="text-indigo-300 font-medium">help you
+                                    focus on what matters</span>.
+                                No gamification — persistent, clean, objective‑first.
+                            </p>
+                            <div class="mt-5 space-y-3">
+                                <div class="flex gap-3"><span class="text-indigo-400 text-base">▶</span>
+                                    <div><span class="text-white text-sm font-medium">objective 1</span>
+                                        <p class="text-xs text-zinc-400">boost daily consistency with priority & due
+                                            date.</p>
+                                    </div>
+                                </div>
+                                <div class="flex gap-3"><span class="text-indigo-400 text-base">▶</span>
+                                    <div><span class="text-white text-sm font-medium">objective 2</span>
+                                        <p class="text-xs text-zinc-400">local storage keeps your plan persistent.</p>
+                                    </div>
+                                </div>
+                                <div class="flex gap-3"><span class="text-indigo-400 text-base">▶</span>
+                                    <div><span class="text-white text-sm font-medium">objective 3</span>
+                                        <p class="text-xs text-zinc-400">distraction‑free UI — exactly what a student
+                                            needs.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-[#1a1a26] p-5 rounded-xl border border-[#2e2e3c]">
+                            <h3 class="text-sm font-semibold text-white flex items-center gap-2">🛠️ built with</h3>
+                            <ul class="mt-3 text-xs space-y-2 text-zinc-300">
+                                <li class="flex items-center gap-2"><span
+                                        class="w-1 h-1 bg-teal-400 rounded-full"></span> Tailwind CSS – fluid, compact
+                                </li>
+                                <li class="flex items-center gap-2"><span
+                                        class="w-1 h-1 bg-teal-400 rounded-full"></span> vanilla JS – lightweight</li>
+                                <li class="flex items-center gap-2"><span
+                                        class="w-1 h-1 bg-teal-400 rounded-full"></span> localStorage – private &
+                                    persistent</li>
+                            </ul>
+                            <hr class="border-[#2e2e3a] my-4">
+                            <div>
+                                <p class="text-indigo-300 text-xs font-medium">created by</p>
+                                <p class="text-white text-base font-semibold">Darshan Pandey</p>
+                                <p class="text-zinc-400 text-xs">23BCAR0645</p>
+                                <p class="text-[0.7rem] text-zinc-600 mt-2">BCA GENERAL B</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="py-4 border-t border-[#1f1f2b] text-xs text-zinc-500 flex justify-between items-center">
+            <span class="bg-[#14141e] px-3 py-1 rounded-full border border-[#262633]">Darshan Pandey · 23BCAR0645</span>
+            <span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 bg-indigo-500 rounded-full"></span> TODOs
+            </span>
+        </footer>
+    </div>
+
+    <script>
+        (function () {
+            const todos = JSON.parse(localStorage.getItem("todos")) || [];
+            const container = document.getElementById('todo-list-container');
+            const counterSpan = document.getElementById('todo-counter');
+
+            function renderTodos() {
+                if (!container) return;
+                container.innerHTML = '';
+
+                if (todos.length === 0) {
+                    container.innerHTML = `<div class="bg-[#1e1e28] p-6 rounded-lg text-center border border-dashed border-[#333342]"><p class="text-zinc-400 text-xs">✨ No todos — add one above to start.</p></div>`;
+                } else {
+                    todos.forEach(todo => {
+                        const priorityBase =
+                            todo.priority === "high" ? "bg-red-500/10 text-red-300 border-red-800/40" :
+                                todo.priority === "medium" ? "bg-yellow-500/10 text-yellow-300 border-yellow-800/40" :
+                                    "bg-green-500/10 text-green-300 border-green-800/40";
+
+                        container.innerHTML += `
+                        <div class="bg-[#1e1e28] p-4 rounded-lg border border-[#2e2e3a] hover:border-indigo-500/40 transition-all flex justify-between items-start gap-2">
+                            <div class="space-y-1.5 min-w-0">
+                                <div class="flex items-center gap-2 flex-wrap">
+                                    <span class="text-[0.65rem] font-medium bg-[#2a2a36] px-2.5 py-1 rounded-full tracking-wide text-zinc-300">${todo.subject?.trim() ? todo.subject : "📌 general"}</span>
+                                    <span class="text-[0.65rem] px-2 py-1 rounded-full border ${priorityBase} font-medium">${todo.priority}</span>
+                                </div>
+                                <h3 class="text-sm font-medium text-white truncate">${todo.todo}</h3>
+                                <p class="text-[0.7rem] text-zinc-400 flex items-center gap-1"><span>📅</span> due: ${todo.due || "not set"}</p>
+                            </div>
+                            <button onclick="deleteTodo(${todo.id})" class="text-[0.7rem] bg-zinc-800 hover:bg-red-900/70 px-3 py-1.5 rounded-full text-zinc-300 transition-colors border border-zinc-700">🗑️</button>
+                        </div>`;
+                    });
+                }
+                if (counterSpan) counterSpan.innerText = todos.length + ' task' + (todos.length !== 1 ? 's' : '');
+            }
+            renderTodos();
+
+            window.handleSubmit = function (e) {
+                e.preventDefault();
+                const subject = document.getElementById('subject').value.trim();
+                const todo = document.getElementById('todo').value.trim();
+                const priority = document.querySelector('select[name="priority"]').value;
+                const due = document.getElementById('due').value;
+
+                if (!todo) { alert("to‑do can't be empty"); return; }
+
+                todos.push({
+                    id: Date.now(),
+                    subject: subject || " ",
+                    todo: todo,
+                    priority,
+                    due: due || "—"
+                });
+                localStorage.setItem("todos", JSON.stringify(todos));
+                renderTodos();
+                e.target.reset();
+            };
+
+            window.deleteTodo = function (id) {
+                const idx = todos.findIndex(t => t.id === id);
+                if (idx !== -1) { todos.splice(idx, 1); localStorage.setItem("todos", JSON.stringify(todos)); renderTodos(); }
+            };
+
+            window.switchTab = function (tab) {
+                ['home', 'planner', 'about'].forEach(s => {
+                    const sec = document.getElementById(s + '-section');
+                    if (sec) sec.classList.add('hidden');
+                });
+
+                document.querySelectorAll('.tab-btn').forEach(btn => {
+                    btn.classList.remove('text-white', 'bg-indigo-600', 'shadow-md', 'font-medium');
+                    btn.classList.add('text-zinc-400');
+                });
+
+                const activeSection = document.getElementById(tab + '-section');
+                if (activeSection) activeSection.classList.remove('hidden');
+
+                const activeBtn = document.getElementById('tab-' + tab);
+                if (activeBtn) {
+                    activeBtn.classList.remove('text-zinc-400');
+                    activeBtn.classList.add('text-white', 'bg-indigo-600', 'font-medium', 'shadow-md');
+                }
+            };
+
+            window.onload = function () {
+                document.getElementById('home-section')?.classList.add('hidden');
+                document.getElementById('planner-section')?.classList.remove('hidden');
+                document.getElementById('about-section')?.classList.add('hidden');
+
+                document.querySelectorAll('.tab-btn').forEach(b => {
+                    b.classList.remove('text-white', 'bg-indigo-600', 'shadow-md');
+                    b.classList.add('text-zinc-400');
+                });
+                const plannerBtn = document.getElementById('tab-planner');
+                if (plannerBtn) {
+                    plannerBtn.classList.remove('text-zinc-400');
+                    plannerBtn.classList.add('text-white', 'bg-indigo-600', 'font-medium', 'shadow-md');
+                }
+            };
+        })();
+    </script>
+</body>
+
+</html>
