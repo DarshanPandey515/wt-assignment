@@ -25,6 +25,7 @@ The objective of this project is to:
 - HTML5
 - CSS3
 - JavaScript
+- TailwindCss
 - Visual Studio Code
 
 ---
@@ -55,3 +56,4 @@ Subject: Web Technology (23BCA6C02)
 ## License
 
 This project is developed for academic purposes only.
+
